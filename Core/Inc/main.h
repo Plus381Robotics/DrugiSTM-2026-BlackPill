@@ -31,7 +31,9 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdint.h>
+#include <stdio.h>
+#include "ssd1306.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -53,6 +55,39 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
+
+void time_ISR();
+uint32_t get_time();
+void time_start();
+void time_stop();
+void getRGB(int *R, int *G, int *B);
+void tcs3272_init(void);
+void enable(void);
+void disable(void);
+void vacuum1(uint16_t);
+void vacuum2(uint16_t);
+void vacuum3(uint16_t);
+void vacuum4(uint16_t);
+uint16_t sensor_1(void);
+uint16_t chich();
+uint16_t switch_for_side();
+uint16_t switch_4();
+uint16_t switch_2();
+uint16_t switch_1();
+void F_valve1(uint16_t state);
+void F_valve2(uint16_t state);
+void F_valve3(uint16_t state);
+void F_valve4(uint16_t state);
+
+void B_valve1(uint16_t state2);
+void B_valve2(uint16_t state2);
+void B_valve3(uint16_t state2);
+void B_valve4(uint16_t state2);
+
+
+void process_rx_buffer();
+void update_tx_buffer();
+void comm_init();
 
 /* USER CODE END EFP */
 
