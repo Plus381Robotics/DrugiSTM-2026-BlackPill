@@ -13,7 +13,7 @@ uint32_t sys_time_ms = 0;
 void time_ISR() {
 	sys_time_ms += 1;
 	update_tx_buffer();
-	process_rx_buffer();
+//	process_rx_buffer();
 }
 
 uint32_t get_time() {
