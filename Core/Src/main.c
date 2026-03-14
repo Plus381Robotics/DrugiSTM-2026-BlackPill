@@ -61,8 +61,8 @@ char sisaljka_f1, sisaljka_f2, sisaljka_f3, sisaljka_f4;
 char sisaljka_b1, sisaljka_b2, sisaljka_b3, sisaljka_b4;
 
 uint8_t in;
-int prviBroj, drugiBroj, treciBroj, cetvrtiBroj;
-int petiBroj, sestiBroj, sedmiBroj, osmiBroj;
+char prviBroj, drugiBroj, treciBroj, cetvrtiBroj;
+char petiBroj, sestiBroj, sedmiBroj, osmiBroj;
 
 char cinc;
 uint8_t chinchh = 0;
