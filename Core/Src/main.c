@@ -57,8 +57,8 @@ uint8_t v1, v2, v3, v4;
 uint8_t v1a = 0, v2a = 0, v3a = 0, v4a = 0;
 uint8_t sisaljka_f1a = 0, sisaljka_f2a = 0, sisaljka_f3a = 0, sisaljka_f4a = 0;
 uint8_t sisaljka_b1a = 0, sisaljka_b2a = 0, sisaljka_b3a = 0, sisaljka_b4a = 0;
-char sisaljka_f1, sisaljka_f2, sisaljka_f3, sisaljka_f4;
-char sisaljka_b1, sisaljka_b2, sisaljka_b3, sisaljka_b4;
+uint8_t sisaljka_f1, sisaljka_f2, sisaljka_f3, sisaljka_f4;
+uint8_t sisaljka_b1, sisaljka_b2, sisaljka_b3, sisaljka_b4;
 
 uint8_t in;
 char prviBroj, drugiBroj, treciBroj, cetvrtiBroj;
@@ -136,79 +136,79 @@ int main(void)
 		vacuum3(v3);
 		vacuum4(v4);
 
-		v1a = v1 + 48;
-		v2a = v2 + 48;
-		v3a = v3 + 48;
-		v4a = v4 + 48;
+//		v1a = v1 + 48;
+//		v2a = v2 + 48;
+//		v3a = v3 + 48;
+//		v4a = v4 + 48;
 
 		F_valve1(sisaljka_f1);
 		F_valve2(sisaljka_f2);
 		F_valve3(sisaljka_f3);
 		F_valve4(sisaljka_f4);
 
-		B_valve1(sisaljka_b1);
-		B_valve2(sisaljka_b2);
-		B_valve3(sisaljka_b3);
-		B_valve4(sisaljka_b4);
-
-		sisaljka_f1a = sisaljka_f1 + 48;
-		sisaljka_f2a = sisaljka_f2 + 48;
-		sisaljka_f3a = sisaljka_f3 + 48;
-		sisaljka_f4a = sisaljka_f4 + 48;
-
-		sisaljka_b1a = sisaljka_b1 + 48;
-		sisaljka_b2a = sisaljka_b2 + 48;
-		sisaljka_b3a = sisaljka_b3 + 48;
-		sisaljka_b4a = sisaljka_b4 + 48;
-
-		chich(cinc);
-		chinchh = cinc + 48;
-
-		char jedan[1];
-		*jedan = 49;
-		char dva[1];
-		char nula[1];
-		char c[1];
-		*c = 'C';
-		char y[1];
-		*y = 'Y';
-		char cetiri[1];
-		//		sprintf(jedan, "%d", 1);
-		//		sprintf(dva, "%d", 2);
-		//		sprintf(nula, "%d", 0);
-		//		sprintf(cetiri, "%d", 4);
-		//
-
-		SSD1306_GotoXY(8, 2);
-		SSD1306_Puts(&prviBroj, &Font_11x18, 1);
-		SSD1306_GotoXY(20, 2);
-		SSD1306_Puts(&drugiBroj, &Font_11x18, 1);
-		SSD1306_GotoXY(32, 2);
-		SSD1306_Puts(&treciBroj, &Font_11x18, 1);
-		SSD1306_GotoXY(44, 2);
-		SSD1306_Puts(&cetvrtiBroj, &Font_11x18, 1);
-
-		SSD1306_GotoXY(2, 21);
-		SSD1306_Puts(c, &Font_11x18, 1);
-		SSD1306_GotoXY(13, 21);
-		SSD1306_Puts(y, &Font_11x18, 1);
-		SSD1306_GotoXY(26, 21);
-		SSD1306_Puts(cetiri, &Font_11x18, 1);
-		SSD1306_GotoXY(38, 21);
-		SSD1306_Puts(dva, &Font_11x18, 1);
-		SSD1306_GotoXY(50, 21);
-		SSD1306_Puts(jedan, &Font_11x18, 1);
-
-		SSD1306_GotoXY(8, 42);
-		SSD1306_Puts(&petiBroj, &Font_11x18, 1);
-		SSD1306_GotoXY(20, 42);
-		SSD1306_Puts(&sestiBroj, &Font_11x18, 1);
-		SSD1306_GotoXY(32, 42);
-		SSD1306_Puts(&sedmiBroj, &Font_11x18, 1);
-		SSD1306_GotoXY(44, 42);
-		SSD1306_Puts(&osmiBroj, &Font_11x18, 1);
-
-		SSD1306_UpdateScreen();
+//		B_valve1(sisaljka_b1);
+//		B_valve2(sisaljka_b2);
+//		B_valve3(sisaljka_b3);
+//		B_valve4(sisaljka_b4);
+//
+//		sisaljka_f1a = sisaljka_f1 + 48;
+//		sisaljka_f2a = sisaljka_f2 + 48;
+//		sisaljka_f3a = sisaljka_f3 + 48;
+//		sisaljka_f4a = sisaljka_f4 + 48;
+//
+//		sisaljka_b1a = sisaljka_b1 + 48;
+//		sisaljka_b2a = sisaljka_b2 + 48;
+//		sisaljka_b3a = sisaljka_b3 + 48;
+//		sisaljka_b4a = sisaljka_b4 + 48;
+//
+//		chich(cinc);
+//		chinchh = cinc + 48;
+//
+//		char jedan[1];
+//		*jedan = 49;
+//		char dva[1];
+//		char nula[1];
+//		char c[1];
+//		*c = 'C';
+//		char y[1];
+//		*y = 'Y';
+//		char cetiri[1];
+//		//		sprintf(jedan, "%d", 1);
+//		//		sprintf(dva, "%d", 2);
+//		//		sprintf(nula, "%d", 0);
+//		//		sprintf(cetiri, "%d", 4);
+//		//
+//
+//		SSD1306_GotoXY(8, 2);
+//		SSD1306_Puts(&prviBroj, &Font_11x18, 1);
+//		SSD1306_GotoXY(20, 2);
+//		SSD1306_Puts(&drugiBroj, &Font_11x18, 1);
+//		SSD1306_GotoXY(32, 2);
+//		SSD1306_Puts(&treciBroj, &Font_11x18, 1);
+//		SSD1306_GotoXY(44, 2);
+//		SSD1306_Puts(&cetvrtiBroj, &Font_11x18, 1);
+//
+//		SSD1306_GotoXY(2, 21);
+//		SSD1306_Puts(c, &Font_11x18, 1);
+//		SSD1306_GotoXY(13, 21);
+//		SSD1306_Puts(y, &Font_11x18, 1);
+//		SSD1306_GotoXY(26, 21);
+//		SSD1306_Puts(cetiri, &Font_11x18, 1);
+//		SSD1306_GotoXY(38, 21);
+//		SSD1306_Puts(dva, &Font_11x18, 1);
+//		SSD1306_GotoXY(50, 21);
+//		SSD1306_Puts(jedan, &Font_11x18, 1);
+//
+//		SSD1306_GotoXY(8, 42);
+//		SSD1306_Puts(&petiBroj, &Font_11x18, 1);
+//		SSD1306_GotoXY(20, 42);
+//		SSD1306_Puts(&sestiBroj, &Font_11x18, 1);
+//		SSD1306_GotoXY(32, 42);
+//		SSD1306_Puts(&sedmiBroj, &Font_11x18, 1);
+//		SSD1306_GotoXY(44, 42);
+//		SSD1306_Puts(&osmiBroj, &Font_11x18, 1);
+//
+//		SSD1306_UpdateScreen();
 	}
   /* USER CODE END 3 */
 }
