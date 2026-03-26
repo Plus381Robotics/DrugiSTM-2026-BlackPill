@@ -9,11 +9,15 @@
 
 extern TIM_HandleTypeDef htim9;
 uint32_t sys_time_ms = 0;
+uint8_t psc = 100, cnt;
 
 void time_ISR() {
 	sys_time_ms += 1;
-	update_tx_buffer();
-//	process_rx_buffer();
+	cnt++;
+	if (cnt >= psc) {
+		cnt = 0;
+		update_tx_buffer();
+	}
 }
 
 uint32_t get_time() {

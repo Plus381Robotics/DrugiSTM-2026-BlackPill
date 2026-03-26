@@ -12,10 +12,11 @@ extern UART_HandleTypeDef huart6;
 volatile uint8_t tx_buffer[TXBUFFERSIZE], rx_buffer[RXBUFFERSIZE];
 //volatile uint8_t tdbg = 0, rdbg;
 volatile uint8_t chinch_waiting;
+uint8_t t_dbg = 0b11111111;
 
 void update_tx_buffer() {
 	// TODO: ovde za slanje na Rpi
-//			tx_buffer[0] = tdbg;
+//	tx_buffer[0] = t_dbg;
 	tx_buffer[0] = 0;
 	tx_buffer[0] |= (chich() << 0);
 	tx_buffer[0] |= (switch_1() << 1);
@@ -50,19 +51,33 @@ void update_tx_buffer() {
 //}
 
 //uint8_t v1dbg, v3dbg, v2dbg, v4dbg, v0dbg;
+volatile uint8_t vacuum;
 void process_rx_buffer() {
 //	rdbg = rx_buffer[0];
 	chinch_waiting = (rx_buffer[0] >> 0) & 0b1;
-	vacuum1((rx_buffer[0] >> 1) & 0b1);
-	vacuum2((rx_buffer[0] >> 2) & 0b1);
-	vacuum3((rx_buffer[0] >> 3) & 0b1);
-	vacuum4((rx_buffer[0] >> 4) & 0b1);
+	vacuum = rx_buffer[0];
+//	vacuum1((rx_buffer[0] >> 1) & 0b1);
+//	vacuum2((rx_buffer[0] >> 2) & 0b1);
+//	vacuum3((rx_buffer[0] >> 3) & 0b1);
+//	vacuum4((rx_buffer[0] >> 4) & 0b1);
 //
 //	v1dbg = (rx_buffer[0] >> 1) & 0b1;
 //	v2dbg = (rx_buffer[0] >> 2) & 0b1;
 //	v3dbg = (rx_buffer[0] >> 3) & 0b1;
 //	v4dbg = (rx_buffer[0] >> 4) & 0b1;
 //	v0dbg = (rx_buffer[0] >> 0) & 0b1;
+}
+
+void set_vacuum() {
+	vacuum1((vacuum >> 1) & 0b1);
+	HAL_Delay(50);
+	vacuum2((vacuum >> 2) & 0b1);
+	HAL_Delay(50);
+	vacuum3((vacuum >> 3) & 0b1);
+	HAL_Delay(50);
+	vacuum4((vacuum >> 4) & 0b1);
+	HAL_Delay(50);
+
 }
 
 void comm_init() {

@@ -88,7 +88,7 @@ void B_valve4(uint16_t state2);
 void process_rx_buffer();
 void update_tx_buffer();
 void comm_init();
-
+void set_vacuum();
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

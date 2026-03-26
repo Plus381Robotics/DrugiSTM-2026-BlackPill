@@ -131,20 +131,21 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		vacuum1(v1);
-		vacuum2(v2);
-		vacuum3(v3);
-		vacuum4(v4);
+		set_vacuum();
+//		vacuum1(v1);
+//		vacuum2(v2);
+//		vacuum3(v3);
+//		vacuum4(v4);
 
 //		v1a = v1 + 48;
 //		v2a = v2 + 48;
 //		v3a = v3 + 48;
 //		v4a = v4 + 48;
 
-		F_valve1(sisaljka_f1);
-		F_valve2(sisaljka_f2);
-		F_valve3(sisaljka_f3);
-		F_valve4(sisaljka_f4);
+//		F_valve1(sisaljka_f1);
+//		F_valve2(sisaljka_f2);
+//		F_valve3(sisaljka_f3);
+//		F_valve4(sisaljka_f4);
 
 //		B_valve1(sisaljka_b1);
 //		B_valve2(sisaljka_b2);
