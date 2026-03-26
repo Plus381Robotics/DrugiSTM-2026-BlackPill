@@ -18,7 +18,7 @@ void update_tx_buffer() {
 	// TODO: ovde za slanje na Rpi
 //	tx_buffer[0] = t_dbg;
 	tx_buffer[0] = 0;
-	tx_buffer[0] |= (chich() << 0);
+	tx_buffer[0] |= ~(chich() << 0);
 	tx_buffer[0] |= (switch_1() << 1);
 	tx_buffer[0] |= (switch_2() << 2);
 	tx_buffer[0] |= (switch_4() << 3);
