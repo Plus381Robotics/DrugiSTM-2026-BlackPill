@@ -69,13 +69,13 @@ void process_rx_buffer() {
 }
 
 void set_vacuum() {
-	vacuum1((vacuum >> 1) & 0b1);
+	vacuum1((vacuum >> 3) & 0b1);
 	HAL_Delay(50);
-	vacuum2((vacuum >> 2) & 0b1);
+	vacuum2((vacuum >> 4) & 0b1);
 	HAL_Delay(50);
-	vacuum3((vacuum >> 3) & 0b1);
+	vacuum3((vacuum >> 1) & 0b1);
 	HAL_Delay(50);
-	vacuum4((vacuum >> 4) & 0b1);
+	vacuum4((vacuum >> 2) & 0b1);
 	HAL_Delay(50);
 
 }
